@@ -1,0 +1,18 @@
+Table of Users
+Email address
+Name
+User name
+Password
+User ID (Increment )
+Join Date
+
+
+Table of Tasks
+Task # (increment)
+Task Text
+User ID
+Order By:  Alpha, Priority, Task
+Date Added
+Date Due
+Date Completed
+Completed
