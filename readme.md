@@ -1,25 +1,33 @@
-## Laravel PHP Framework
+#  John Hamrick CSCI E-15 README file for Project 4
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+The goal of this project is to bring together all of the skills learned throughout the semester to create a fully-functioning web application that uses PHP, Laravel and a database.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+**## Task ##**
+This project requires the following:
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+1. Uses PHP/Laravel
+1. Uses a database with at least 2 tables (excluding a users table but including pivot tables).
+1. Demonstrates all 4 CRUD (Create, Read, Update, Delete) interactions.  Signup/Login does not count toward this.
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+# Task Manager #
 
-## Official Documentation
+## Functions Include: ##
+ 
+- User authentication - users have their own lists
+- Incomplete tasks page - bold items
+- Completed tasks page - greyed out items
+- New tasks page
+- Edit tasks page
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
 
-### Contributing To Laravel
+Whenever a task is displayed, it should list the date it was created and if complete, when it was completed.
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+Use error checking: Don't allow empty tasks, don't allow duplicate email sign-ups, etc.
 
-### License
+Extra Challenge:  Alpha-numeric ordering
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The live URL of the project is: P4.hamrickjohn.me
+
+The recorded demo is available at: http://www.screencast.com/?????
+
+Sources include: Classroom lecture, Section Mtgs., Piazza, Packagist (packages) and Github.
