@@ -18,13 +18,13 @@ class CreateTasksTable extends Migration {
 		    	
 		// Timestamp generates two columns: `created_at` and `updated_at` to
         // keep track of changes to a row
-		    	$table->timestamps();
+				$table->timestamps();
 				$table->longText('description');
 				$table->char('alpha', 1);
 				$table->tinyInteger('priority');
         		$table->dateTime('completed');
         		$table->dateTime('due');
-		    	$table->boolean('complete');
+				$table->boolean('complete');
    		});
 	}
 

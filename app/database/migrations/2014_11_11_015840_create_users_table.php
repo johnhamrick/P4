@@ -19,12 +19,12 @@ class CreateUsersTable extends Migration {
 		    	
 		// This generates two columns: `created_at` and `updated_at` to
         // keep track of changes to a row
-		    	$table->timestamps();
+				$table->timestamps();
 				$table->string('name', 100);
-		    	$table->string('email')->unique();
+				$table->string('email')->unique();
         		$table->string('password');
-		    	$table->string('user_name');
-		    	$table->boolean('remember_token');
+				$table->string('user_name');
+				$table->boolean('remember_token');
    		});
 	}
 
