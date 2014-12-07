@@ -30,4 +30,4 @@ The live URL of the project is: P4.hamrickjohn.me
 
 The recorded demo is available at: http://www.screencast.com/?????
 
-Sources include: Classroom lecture, Section Mtgs., Piazza, Packagist (packages) and Github.
+Sources include: Classroom lecture, Section Mtgs., Piazza, Packagist (packages) Bootstrap, and Github.
