@@ -24,10 +24,8 @@ Whenever a task is displayed, it should list the date it was created and if comp
 
 Use error checking: Don't allow empty tasks, don't allow duplicate email sign-ups, etc.
 
-Extra Challenge:  Alpha-numeric ordering
-
 The live URL of the project is: P4.hamrickjohn.me
 
 The recorded demo is available at: http://www.screencast.com/?????
 
-Sources include: Classroom lecture, Section Mtgs., Piazza, Packagist (packages) Bootstrap, and Github.
+Sources include: Classroom lecture, Section Mtgs., Piazza, Packagist, Pre, Faker, Bootstrap, Github, Foobooks and Stack Overflow.
