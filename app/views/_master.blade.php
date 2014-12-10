@@ -15,6 +15,5 @@
 		@include('jumbotron')
 		@yield('body')
 		@yield('content')
-		@yield('footer')
 	</body>
 </html>

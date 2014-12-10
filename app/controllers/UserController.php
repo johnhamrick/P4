@@ -51,7 +51,7 @@ return Redirect::to('/signup')
 # Log in
 Auth::login($user);
 $user->sendWelcomeEmail();
-return Redirect::to('/')->with('flash_message', 'Welcome to Foobooks!');
+return Redirect::to('/')->with('flash_message', 'Welcome to Task Manager!');
 }
 /**
 * Display the login form

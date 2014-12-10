@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('alpha_num');
+	return View::make('numbers');
 });
 
 
@@ -47,7 +47,7 @@ Route::get('/debug', function() {
     echo '<br>';
 
     echo '<h1>Environment</h1>';
-    echo App::environment().'</h1>';
+    echo App::environment().'<br>';
 
     echo '<h1>Debugging?</h1>';
     if(Config::get('app.debug')) echo "Yes"; else echo "No";
@@ -61,11 +61,18 @@ Route::get('/debug', function() {
         echo '<strong style="background-color:green; padding:5px;">Connection confirmed</strong>';
         echo "<br><br>Your Databases:<br><br>";
         print_r($results);
-    } 
+    }
+   
     catch (Exception $e) {
         echo '<strong style="background-color:crimson; padding:5px;">Caught exception: ', $e->getMessage(), "</strong>\n";
     }
 
     echo '</pre>';
 
+});
+
+    Route::get('mysql-test', function() {
+
+    # Use the DB component to select all the databases
+    $results = DB::select('SHOW DATABASES;');
 });
