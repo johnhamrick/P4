@@ -1,12 +1,12 @@
 @extends('_master')
 
 @section('title')
-    Edit Category
+     Edit Category
 @stop
 
 @section('content')
 
-    {{ Form::model($tag, ['method' => 'put', 'action' => ['TagController@update', $tag->id]]) }}
+    {{ Form::model($category, ['method' => 'put', 'action' => ['TagController@update', $tag->id]]) }}
         
         <h2>Update: {{ $tag->name }}</h2>
         
