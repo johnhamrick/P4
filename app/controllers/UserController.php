@@ -1,9 +1,9 @@
 <?php
 
 class UserController extends BaseController {
-/**
-*
-*/
+		/**
+		*
+		*/
 		public function __construct() {
 
 			# Make sure BaseController construct gets called
@@ -15,26 +15,26 @@ class UserController extends BaseController {
 			));
 		}
 
-/**
-* Show the new user signup form
-* @return View
-*/
+		/**
+		* Show the new user signup form
+		* @return View
+		*/
 		public function getSignup() {
 				
 				return View::make('user_signup');
 		}
 
-/**
-* Process the new user signup
-* @return Redirect
-*/
+		/**
+		* Process the new user signup
+		* @return Redirect
+		*/
 		public function postSignup() {
 
 			# Step 1) Define the rules
 			$rules = array(
 					'email' => 'required|email|unique:users,email',
 					'password' => 'required|min:6'
-		);
+			);
 
 			# Step 2)
 			$validator = Validator::make(Input::all(), $rules);

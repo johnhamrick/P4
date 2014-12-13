@@ -17,6 +17,7 @@ class DebugController extends BaseController {
 		*/
 
 		public function missingMethod($parameters = array()) {
+			
 			return 'Method "'.$parameters[0].'" not found';
 	}
 

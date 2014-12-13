@@ -83,7 +83,7 @@ class TaskController extends \BaseController {
 
 
 		/**
-		* Show the "Edit a book form"
+		* Show the "Edit a task form"
 		* @return View
 		*/
 		
@@ -103,7 +103,7 @@ class TaskController extends \BaseController {
 }
 
 		/**
-		* Process the "Edit a book form"
+		* Process the "Edit a task form"
 		* @return Redirect
 		*/
 		
@@ -143,7 +143,7 @@ class TaskController extends \BaseController {
 }
 
 		/**
-		* Process a book search
+		* Process a task search
 		* Called w/ Ajax
 		*/
 
@@ -169,7 +169,7 @@ class TaskController extends \BaseController {
 
 				$results = '';
 					foreach($tasks as $task) {
-				# Created a "stub" of a view called task_search_result.php; all it is is a stub of code to display a task
+				# Created a "stub" of a view called task_search_result.php; it's simply a stub of code to display a task
 				# For each task, we'll add a new stub to the results
 				$results .= View::make('task_search_result')->with('task', $task)->render();
 	}
