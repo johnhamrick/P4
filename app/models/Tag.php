@@ -5,9 +5,9 @@ class UserController extends Eloquent {
 		# Enable fillable on the 'name' column so we can use the Model shortcut Create
 		protected $fillable = array('name');
 
-	public function books() {
-		# Tags belong to many Books
-		return $this->belongsToMany('Book');
+	public function tasks() {
+		# Tags belong to many Tasks
+		return $this->belongsToMany('Task');
 	}
 
 		# Model events...
@@ -17,7 +17,7 @@ class UserController extends Eloquent {
 		parent::boot();
 		
 		static::deleting(function($tag) {
-			DB::statement('DELETE FROM book_tag WHERE tag_id = ?', array($tag->id));
+			DB::statement('DELETE FROM task_tag WHERE tag_id = ?', array($tag->id));
 		});
 		
 		}		
