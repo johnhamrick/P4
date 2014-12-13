@@ -10,7 +10,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		use UserTrait, RemindableTrait;
 
 		/**
-		* The database table used by the model.
+		* The database table used by the model...
 		*
 		* @var string
 		*/
@@ -18,7 +18,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		protected $table = 'users';
 
 		/**
-		* The attributes excluded from the model's JSON form.
+		* The attributes excluded from the model's JSON form...
 		*
 		* @var array
 		*/
