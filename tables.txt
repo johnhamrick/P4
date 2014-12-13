@@ -16,3 +16,9 @@ Date Added
 Date Due
 Date Completed
 Completed
+
+
+Table of Categories
+Work
+Personal
+Miscellaneous
