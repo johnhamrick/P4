@@ -11,6 +11,7 @@
 	<br>
 	<div class="row">
 	<div class="col-md-4">
+
 		<h2>About Task Manager</h2>
 			<p>
 Tasks can be categorized numerically from 1 - 9, enabling better management of to-do items.
@@ -23,8 +24,10 @@ Tasks can also be assigned to categories for grouping items.
 	<br>
 			</p>
 	<div class="col-md-4">
-		<h2>Create Task</h2>
+
+		<h2>Manage Tasks</h2>
 		@include('num_list')
+	</div>
 	</div>
 	</div>
 	</div>
