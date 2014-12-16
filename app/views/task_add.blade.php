@@ -10,17 +10,15 @@
 
 		{{ Form::open(array('url' => '/task/create')) }}
 			
-			{{ Form::label('task','Task') }}
-			{{ Form::text('task'); }}
+			{{ Form::label('description','Task') }}
+			{{ Form::text('description'); }}
 
-			{{ Form::label('user_id', 'User') }}
-			{{ Form::select('user_id', $users); }}
+			{{ Form::label('due', 'User') }}
+			{{ Form::text('due'); }}
 
-			{{ Form::label('created','Created (Y-m-d)') }}
-			{{ Form::text('created'); }}
 
-			@foreach($tags as $id => $tag)
-				{{ Form::checkbox('tags[]', $id); }} {{ $tag }}
+			@foreach($categories as $id => $category)
+				{{ Form::checkbox('categories[]', $id); }} {{ $category }}
 			@endforeach
 
 			{{ Form::submit('Add'); }}

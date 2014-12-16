@@ -1,7 +1,8 @@
 @extends('_master')
 
 @section('title')
-		Edit
+
+Edit
 
 @stop
 
@@ -11,50 +12,24 @@
 
 @section('content')
 
-		<h1>Edit</h1>
-		<h2>{{{ $task['title'] }}}</h2>
+<h1>Edit</h1>
 
-		{{---- EDIT -----}}
+<h2>{{{ $item['description'] }}}</h2>
+
+{{---- EDIT -----}}
 		{{ Form::open(array('url' => '/task/edit')) }}
+		{{ Form::hidden('id',$item['id']); }}
 
-			{{ Form::hidden('id',$task['id']); }}
+<div class='form-group'>
 
-			<div class='form-group'>
-				{{ Form::label('title','Title') }}
-				{{ Form::text('title',$task['title']); }}
-			</div>
+		{{ Form::label('description','Task') }}
+		{{ Form::text('description',$item['description']); }}
+</div>
 
-			<div class='form-group'>
-				{{ Form::label('user_id', 'User') }}
-				{{ Form::select('user_id', $users, $task->user_id); }}
-			</div>
-
-			<div class='form-group'>
-				{{ Form::label('created','Y-m-d H:i:s') }}
-				{{ Form::text('created',$task['created']); }}
-			</div>
-
-			<div class='form-group'>
-				@foreach($tags as $id => $tag)
-				{{ Form::checkbox('tags[]', $id, $task->tags->contains($id)); }} {{ $tag }}
-				&nbsp;&nbsp;&nbsp;
-				@endforeach
-			</div>
-
-			{{ Form::submit('Save'); }}
-		
+<div class='form-group'>
+		{{ Form::label('due','Due Date (mm/dd/yy)') }}
+		{{ Form::text('due',$item['due']); }}
+</div>
+		{{ Form::submit('Save'); }}
 		{{ Form::close() }}
-
-	<div>
-		
-		{{---- DELETE -----}}
-		{{ Form::open(array('url' => '/task/delete')) }}
-			
-			{{ Form::hidden('id',$task['id']); }}
-				<button onClick='parentNode.submit();return false;'>Delete</button>
-			
-		{{ Form::close() }}
-	
-	</div>
-
 @stop

@@ -1,137 +1,87 @@
 <?php
-
 class CategoryController extends \BaseController {
-
-		/**
-		*
-		*/
-
-		public function __construct() {
-		
-			# Make sure BaseController construct gets called
-			parent::__construct();
-
-			# Only logged in users are allowed here
-			$this->beforeFilter('auth');
+/**
+*
+*/
+public function __construct() {
+# Make sure BaseController construct gets called
+parent::__construct();
+$this->beforeFilter('auth', array('except' => ['getIndex','getDigest']));
 }
-
-		/**
-		* Display a listing of the resource.
-		*
-		* @return Response
-		*/
-
-		public function index() {
-			
-			$categories = Category::all();
-			return View::make('category_index')->with('categories',$categories);
+/**
+* Display all categories
+* @return View
+*/
+public function getIndex() {
+$categories = Category::all();
+if($categories->isEmpty() != TRUE) {
+return View::make('category_list')->with('categories',$categories);
 }
-
-		/**
-		* Show the form for creating a new resource.
-		*
-		* @return Response
-		*/
-		
-		public function create() {
-			return View::make('category_create');
+else {
+return Redirect::action('IndexController@getIndex')->with('flash_message','No Categories to display.');;
 }
-
-		/**
-		* Store a newly created resource in storage.
-		*
-		* @return Response
-		*/
-
-		public function store() {
-			
-			$category = new category;
-			$category->name = Input::get('name');
-			$category->save();
-			
-			return Redirect::action('CategoryController@index')->with('flash_message','Your category been added.');
 }
-
-		/**
-		* Display the specified resource.
-		*
-		* @param int $id
-		* @return Response
-		*/
-
-		public function show($id) {
-
-			try {
-			$category = category::findOrFail($id);
-	}
-			catch(Exception $e) {
-			return Redirect::to('/category')->with('flash_message', 'category not found');
-	}
-			return View::make('category_show')->with('category', $category);
+/**
+* Show the "Add a category form"
+* @return View
+*/
+public function getCreate() {
+return View::make('category_add');
 }
-
-		/**
-		* Show the form for editing the specified resource.
-		*
-		* @param int $id
-		* @return Response
-		*/
-
-		public function edit($id) {
-			
-			try {
-				$category = category::findOrFail($id);
-	}
-
-			catch(Exception $e) {
-				return Redirect::to('/category')->with('flash_message', 'category not found');
-	}
-
-			# Pass with the $category object so we can do model binding on the form
-			return View::make('category_edit')->with('category', $category);
+/**
+* Process the "Add a category form"
+* @return Redirect
+*/
+public function postCreate() {
+$category = new Category();
+$category->name = $_POST['name'];
+$category->save();
+return Redirect::action('IndexController@getIndex')->with('flash_message','Your category has been added.');
 }
-
-		/**
-		* Update the specified resource in storage.
-		*
-		* @param int $id
-		* @return Response
-		*/
-
-		public function update($id) {
-			
-			try {
-				$category = category::findOrFail($id);
-	}
-			catch(Exception $e) {
-				return Redirect::to('/category')->with('flash_message', 'category not found');
-	}
-			$category->name = Input::get('name');
-			$category->save();
-			
-			return Redirect::action('CategoryController@index')->with('flash_message','Your category has been saved.');
+/**
+* Show the "Edit a category form"
+* @return View
+*/
+public function getEdit($id) {
+try {
+$category = Category::findOrFail($id);
 }
-
-		/**
-		* Remove the specified resource from storage.
-		*
-		* @param int $id
-		* @return Response
-		*/
-
-		public function destroy($id) {
-			
-			try {
-				$category = category::findOrFail($id);
-	}
-			catch(Exception $e) {
-				return Redirect::to('/category')->with('flash_message', 'category not found');
-	}
-
-		# Note there's a `deleting` Model event which makes sure book_category entries are also destroyed
-		# See category.php for more details
-			category::destroy($id);
-
-			return Redirect::action('CategoryController@index')->with('flash_message','Your category has been deleted.');
-	}
+catch(exception $e) {
+return Redirect::to('/category')->with('flash_message', 'Category not found');
+}
+return View::make('category_edit')
+->with('category', $category);
+}
+/**
+* Process the "Edit a category form"
+* @return Redirect
+*/
+public function postEdit() {
+try {
+$category = Category::findOrFail(Input::get('id'));
+}
+catch(exception $e) {
+return Redirect::to('/category')->with('flash_message', 'Category not found');
+}
+$category->name = $_POST['name'];
+$category->save();
+return Redirect::action('CategoryController@getIndex')->with('flash_message','Your changes have been saved.');
+}
+/**
+* Process category deletion
+*
+* @return Redirect
+*/
+public function getDelete($id) {
+$category = Category::where('id', '=', $id)->get();
+if($category) {
+Category::destroy($id);
+return Redirect::back()->with('flash_message', 'Category deleted');
+#return Redirect::to('/task')->with('flash_message', 'Task deleted');
+}
+else {
+return Redirect::back()->with('flash_message', 'Could not delete category.');
+#return Redirect::to('/task')->with('flash_message', 'Could not delete task.');
+}
+}
 }

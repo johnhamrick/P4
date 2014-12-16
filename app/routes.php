@@ -25,10 +25,31 @@
         Route::post('/signup', 'UserController@postSignup' );
         Route::post('/login', 'UserController@postLogin' );
         Route::get('/logout', 'UserController@getLogout' );
-        Route::get('/', function()
-{
-	return View::make('numbers');
-});
+
+        /**
+        * Task
+        * (Explicit Routing)
+        */
+        Route::get('/task', 'TaskController@getIndex');
+        Route::get('/task/edit/{id}', 'TaskController@getEdit');
+        Route::post('/task/edit', 'TaskController@postEdit');
+        Route::get('/task/create', 'TaskController@getCreate');
+        Route::post('/task/create', 'TaskController@postCreate');
+        Route::get('/task/delete/{id}', 'TaskController@getDelete');
+
+        /**
+        * Book
+        * (Explicit Routing)
+        */
+        Route::get('/category', 'CategoryController@getIndex');
+        Route::get('/category/edit/{id}', 'CategoryController@getEdit');
+        Route::post('/category/edit', 'CategoryController@postEdit');
+        Route::get('/category/create', 'CategoryController@getCreate');
+        Route::post('/category/create', 'CategoryController@postCreate');
+        Route::get('/category/delete/{id}', 'CategoryController@getDelete');
+        #Route::post('/task/delete', 'CategoryController@postDelete');
+
+
         Route::get('/get-environment',function() {
 
         echo "Environment: ".App::environment();

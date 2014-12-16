@@ -10,14 +10,15 @@
 
 		<h1>All Items</h1>
 
-@foreach($items as $item)
+@foreach($tasks as $task)
 
 		<section class='task'>
-		<h2>{{ $item['id'] }} {{ $item['task'] }}</h2>
+		<h2>{{ $task['id'] }} {{ $task['description'] }}</h2>
 
-Due Date: {{ $item['due_date'] }} Completion Date: {{$item['completion_date']}}
+	Due Date: {{ $task['due'] }}
+<br/>Completion Date: {{$task['completed']}}<br/>
 	
-	@if ($item['is_completed'] == '1')
+	@if ($task['complete'] == '1')
 
 		*Completed*
 	
@@ -28,8 +29,8 @@ Due Date: {{ $item['due_date'] }} Completion Date: {{$item['completion_date']}}
 	@endif
 
 			<p>
-				<a href='/task/edit/{{$item['id']}}'>Edit</a>
-				<a href='/task/delete/{{$item['id']}}'>Delete</a>
+				<a href='/task/edit/{{$task['id']}}'>Edit</a>
+				<a href='/task/delete/{{$task['id']}}'>Delete</a>
 			</p>
 		
 		</section>
