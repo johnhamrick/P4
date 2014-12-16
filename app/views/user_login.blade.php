@@ -1,38 +1,28 @@
 @extends('_master')
 
-@section('Title', 'Log in')
+@section('title')
+		Log In
 
-@section('PlaceHolderMainForm')
-		<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-		<div class="panel panel-default">
-		<div class="panel-heading">
+@stop
 
-	<h1 class="panel-title">Log In</h1>
-		</div>
+@section('content')
 
-		<div class="panel-body">
+<h1>Log In</h1>
+
 			{{ Form::open(array('url' => '/login')) }}
 
-		<div class="form-group email">
 			{{ Form::label('email', 'Email:') }}
 			{{ Form::text('email', null, array('class' => 'form-control')) }}
-		</div>
 
-		<div class="form-group password">
+
 			{{ Form::label('password', 'Password:') }}
 			{{ Form::password('password', array('class' => 'form-control')) }}
-		</div>
 
-		<div class="form-group">
-			{{ Form::submit('Log in', array('class' => 'btn btn-primary btn-md')) }}
+
+			{{ Form::submit('Log In', array('class' => 'btn btn-primary btn-md')) }}
 			<a href="/signup" class="btn btn-link btn-md">Sign up</a>
-		</div>
+
 
 			{{ Form::close() }}
-		</div>
-	</div>
-</div>
-</div>
 
 @stop
