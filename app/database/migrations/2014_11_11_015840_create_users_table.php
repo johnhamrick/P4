@@ -15,7 +15,7 @@ class CreateUsersTable extends Migration {
 	{
 		// Creates Table
 		Schema::create('users', function($table) {
-		    	$table->increments('user_id');
+		    	$table->increments('id');
 		    	
 		// This generates two columns: `created_at` and `updated_at` to
         // keep track of changes to a row
