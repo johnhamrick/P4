@@ -4,24 +4,28 @@
      Edit Category
 @stop
 
+@section('head')
+
+@stop
+
 @section('content')
 
-    {{ Form::model($category, ['method' => 'put', 'action' => ['TagController@update', $tag->id]]) }}
+    <h1>Edit</h1>
         
-        <h2>Update: {{ $tag->name }}</h2>
+        <h2>{{{ $category['name'] }}}</h2>
+
+    {{---- EDIT  ----}}
+
+    {{ Form::open(array('url' => '/category/edit')) }}
+
+    {{ Form::hidden('id' ,$category['id']); }}
+
         
-        <div class='form-group'>
-              {{ Form::label('name', 'Category Name') }}
-              {{ Form::text('name') }}
-        </div>
+      <div class='form-group'>
+              {{ Form::label('name', 'Name') }}
+              {{ Form::text('name' ,$category['name']); }}
+      </div>
 
               {{ Form::submit('Update') }}
     
     {{ Form::close() }}
-
-    {{---- DELETE -----}}
-    {{ Form::open(['method' => 'DELETE', 'action' => ['TagController@destroy', $tag->id]]) }}
-              <a href='javascript:void(0)' onClick='parentNode.submit();return false;'>Delete</a>
-    {{ Form::close() }}
-
-@stop
