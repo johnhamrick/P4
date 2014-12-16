@@ -24,12 +24,17 @@ Edit
 
 		{{ Form::label('description','Task') }}
 		{{ Form::text('description',$item['description']); }}
+
 </div>
 
 <div class='form-group'>
+
 		{{ Form::label('due','Due Date (mm/dd/yy)') }}
 		{{ Form::text('due',$item['due']); }}
+
 </div>
+
 		{{ Form::submit('Save'); }}
 		{{ Form::close() }}
+
 @stop

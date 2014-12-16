@@ -8,7 +8,7 @@
 
 @section('content')
 
-		<h1>All Items</h1>
+		<h1>All Tasks</h1>
 
 @foreach($tasks as $task)
 

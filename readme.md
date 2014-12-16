@@ -2,14 +2,13 @@
 
 The goal of this project is to bring together all of the skills learned throughout the semester to create a fully-functioning web application that uses PHP, Laravel and a database.
 
-**## Task ##**
+# Task Manager #
 This project requires the following:
 
 1. Uses PHP/Laravel
 1. Uses a database with at least 2 tables (excluding a users table but including pivot tables).
 1. Demonstrates all 4 CRUD (Create, Read, Update, Delete) interactions.  Signup/Login does not count toward this.
 
-# Task Manager #
 
 ## Functions Include: ##
  

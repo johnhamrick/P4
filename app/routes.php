@@ -1,25 +1,25 @@
 <?php
 
-    /*
-    |--------------------------------------------------------------------------
-    | Application Routes
-    |--------------------------------------------------------------------------
-    |
-    | This is where you can register all of the routes for an application.
-    | It's a breeze. Simply tell Laravel the URIs it should respond to
-    | and give it the Closure to execute when that URI is requested.
-    |
-    */
+        /*
+        |--------------------------------------------------------------------------
+        | Application Routes
+        |--------------------------------------------------------------------------
+        |
+        | This is where you can register all of the routes for an application.
+        | It's a breeze. Simply tell Laravel the URIs it should respond to
+        | and give it the Closure to execute when that URI is requested.
+        |
+        */
 
-    /**
-    * Index
-    */
+        /**
+        * Index
+        */
         Route::get('/', 'IndexController@getIndex');
 
-    /**
-    * User
-    * (Explicit Routing)
-    */
+        /**
+        * User
+        * (Explicit Routing)
+        */
         Route::get('/signup','UserController@getSignup' );
         Route::get('/login', 'UserController@getLogin' );
         Route::post('/signup', 'UserController@postSignup' );
@@ -38,7 +38,7 @@
         Route::get('/task/delete/{id}', 'TaskController@getDelete');
 
         /**
-        * Book
+        * Category
         * (Explicit Routing)
         */
         Route::get('/category', 'CategoryController@getIndex');
@@ -47,7 +47,6 @@
         Route::get('/category/create', 'CategoryController@getCreate');
         Route::post('/category/create', 'CategoryController@postCreate');
         Route::get('/category/delete/{id}', 'CategoryController@getDelete');
-        #Route::post('/task/delete', 'CategoryController@postDelete');
 
 
         Route::get('/get-environment',function() {
