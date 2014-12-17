@@ -25,6 +25,6 @@ Use error checking: Don't allow empty tasks, don't allow duplicate email sign-up
 
 The live URL of the project is: P4.hamrickjohn.me
 
-The recorded demo is available at: http://www.screencast.com/?????
+The recorded demo is available at: http://www.screencast.com/t/DMdqqUs2m2Y
 
 Sources include: Classroom lecture, Section Mtgs., Piazza, Packagist, Pre, Faker, Bootstrap, Github, Foobooks and Stack Overflow.
