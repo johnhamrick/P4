@@ -2,7 +2,7 @@
 
 return array(
 
-<!-- This connects the database to the migration -->
+	/*This connects the database to the migration*/
 
 	'connections' => array(
 
