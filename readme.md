@@ -19,7 +19,7 @@ This project requires the following:
 - Edit tasks page
 
 
-Whenever a task is displayed, it should list the date it was created and if complete, when it was completed.
+Whenever a task is displayed, it should list the created date and if complete, when it was completed.
 
 Use error checking: Don't allow empty tasks, don't allow duplicate email sign-ups, etc.
 
