@@ -23,7 +23,7 @@ Whenever a task is displayed, it should list the date it was created and if comp
 
 Use error checking: Don't allow empty tasks, don't allow duplicate email sign-ups, etc.
 
-The live URL of the project is: P4.hamrickjohn.me
+The live URL of the project is at: P4.hamrickjohn.me
 
 The recorded demo is available at: http://www.screencast.com/t/DMdqqUs2m2Y
 
