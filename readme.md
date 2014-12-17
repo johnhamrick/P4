@@ -6,7 +6,7 @@ The goal of this project is to bring together all of the skills learned througho
 This project requires the following:
 
 1. Uses PHP/Laravel
-1. Uses a database with at least 2 tables (excluding a users table but including pivot tables).
+1. Uses a database with at least 2 tables (excluding a users table, but including pivot tables).
 1. Demonstrates all 4 CRUD (Create, Read, Update, Delete) interactions.  Signup/Login does not count toward this.
 
 
@@ -14,7 +14,7 @@ This project requires the following:
  
 - User authentication - users have their own lists
 - Incomplete tasks page - bold items
-- Completed tasks page - greyed out items
+- Completed tasks page - grayed out items
 - New tasks page
 - Edit tasks page
 
