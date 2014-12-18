@@ -2,8 +2,6 @@
 
 return array(
 
-	/*This connects the database to the migration*/
-
 	'connections' => array(
 
 		'mysql' => array(
